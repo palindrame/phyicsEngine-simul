@@ -21,3 +21,11 @@ It demonstrates Verlet integration, distance constraints, and interactive draggi
 - **SFML 3.0.2** (graphics, window, system components)
 - Linux desktop environment (X11 or Wayland)
 
+---
+
+## 📦Build & Run
+
+- cmake -S . -B build
+- cmake --build build -j
+- ./build/bin/cloth_sim
+
