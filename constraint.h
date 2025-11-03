@@ -1,39 +1,36 @@
-#ifndef CONSTRAINT_H
-#define CONSTRAINT_H
-
+// constraint.h
+#pragma once
 #include "particle.h"
 #include <cmath>
-#include <limits>
 
-class Constraint {
-public:
+struct Constraint {
     Particle *p1;
     Particle *p2;
-    float initial_length;
-    bool active;
+    float restLength;
+    bool active = true;
 
-    Constraint(Particle *p1, Particle *p2) : p1(p1), p2(p2) {
-        initial_length = std::hypot(p2->position.x - p1->position.x,
-                                    p2->position.y - p1->position.y);
-        active = true;
+    Constraint(Particle *a, Particle *b)
+        : p1(a), p2(b), restLength(length(a->position - b->position)) {}
+
+    static float length(const sf::Vector2f &v) {
+        return std::sqrt(v.x * v.x + v.y * v.y);
     }
 
     void satisfy() {
         if (!active) return;
-
         sf::Vector2f delta = p2->position - p1->position;
-        float current_length = std::hypot(delta.x, delta.y);
-        float difference = (current_length - initial_length) / current_length;
-        sf::Vector2f correction = delta * 0.5f * difference;
-
-        if (!p1->is_pinned) p1->position += correction;
-        if (!p2->is_pinned) p2->position -= correction;
+        float current = length(delta);
+        if (current == 0.f) return;
+        float diff = (current - restLength) / current;
+        // Push each particle unless pinned
+        if (!p1->isPinned && !p2->isPinned) {
+            p1->position += delta * 0.5f * diff;
+            p2->position -= delta * 0.5f * diff;
+        } else if (!p1->isPinned) {
+            p1->position += delta * diff;
+        } else if (!p2->isPinned) {
+            p2->position -= delta * diff;
+        }
     }
-
-    void deactivate() {
-        active = false;
-    }
-
 };
 
-#endif // CONSTRAINT_H

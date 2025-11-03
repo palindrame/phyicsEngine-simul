@@ -1,15 +1,23 @@
-# Cloth Simulation with SFML
+# Cloth Simulation (SFML 3.0.2)
 
-## Description
+A simple 2D cloth physics simulation written in C++ and rendered using **SFML 3.0.2**.  
+It demonstrates Verlet integration, distance constraints, and interactive dragging of cloth particles.
 
-This project is a cloth simulation implemented using SFML (Simple and Fast Multimedia Library). 
-It demonstrates basic cloth physics and rendering using SFML, which is a popular multimedia library for C++.
+---
 
-## Prerequisites
+## 🧩 Features
+- Real-time cloth physics using simple constraints  
+- Particle-based Verlet integration  
+- Interactive mouse dragging of particles  
+- Written in modern C++17  
+- Built entirely with **CMake** and **SFML 3**
 
-To compile this project you will need:
+---
 
-- **[Homebrew](https://brew.sh/)** (for managing packagES)
-- **SFML** (installed via Homebrew - brew install sfml)
+## ⚙️ Requirements
 
+- **C++17** compiler (GCC ≥ 9, Clang ≥ 10, or newer)
+- **CMake ≥ 3.16**
+- **SFML 3.0.2** (graphics, window, system components)
+- Linux desktop environment (X11 or Wayland)
 
