@@ -5,6 +5,15 @@ It demonstrates Verlet integration, distance constraints, and interactive draggi
 
 ---
 
+## 📸 Screenshots
+
+| Simulation running | Dragging particles |
+|:------------------:|:------------------:|
+| ![Screenshot 1](imgs/1.png) | ![Screenshot 2](imgs/2.png) |
+
+
+---
+
 ## 🧩 Features
 - Real-time cloth physics using simple constraints  
 - Particle-based Verlet integration  
