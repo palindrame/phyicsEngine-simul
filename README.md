@@ -33,8 +33,8 @@ It demonstrates Verlet integration, distance constraints, and interactive draggi
 ---
 
 ## 📦Build & Run
-
-- cmake -S . -B build
-- cmake --build build -j
-- ./build/bin/cloth_sim
-
+```bash
+cmake -S . -B build
+cmake --build build -j
+./build/bin/cloth_sim
+```
