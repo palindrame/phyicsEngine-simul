@@ -5,7 +5,7 @@ It demonstrates Verlet integration, distance constraints, and interactive draggi
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 | Simulation running | Dragging particles |
 |:------------------:|:------------------:|
@@ -14,7 +14,7 @@ It demonstrates Verlet integration, distance constraints, and interactive draggi
 
 ---
 
-## 🧩 Features
+## Features
 - Real-time cloth physics using simple constraints  
 - Particle-based Verlet integration  
 - Interactive mouse dragging of particles  
@@ -23,7 +23,7 @@ It demonstrates Verlet integration, distance constraints, and interactive draggi
 
 ---
 
-## ⚙️ Requirements
+## Requirements
 
 - **C++17** compiler (GCC ≥ 9, Clang ≥ 10, or newer)
 - **CMake ≥ 3.16**
@@ -32,7 +32,7 @@ It demonstrates Verlet integration, distance constraints, and interactive draggi
 
 ---
 
-## 📦Build & Run
+## Build & Run
 ```bash
 cmake -S . -B build
 cmake --build build -j
